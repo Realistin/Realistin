@@ -1,0 +1,226 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Üst menü stili */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffcc00; /* Lego sarı rengi */
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Menü elemanları */
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s;
+}
+ /* Ürünler bölümü */
+
+ .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 200px;
+    
+    
+}
+.product img {
+    /* border: 2px solid #ccc; */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    /* margin: 10px; */
+}
+
+.product img:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    /* padding: 10px 20px; */
+    transition: color 0.3s;
+    text-decoration: underline;
+}
+
+.product a:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.navbar a:hover {
+    color: #ff0000; /* Hover olunca Lego kırmızısı */
+}
+
+
+
+  /* Logo stili */
+  .navbar img {
+    max-width: 100px; /* Logonun genişliği */
+    height: auto;
+}
+
+
+
+/* Resim alanı */
+.main-content {
+    padding: 20px;
+    text-align: center;
+   
+     
+    
+    
+}
+
+/* Resim stili */
+.lego-image {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #ffcc00;
+   
+    
+}
+
+/* Alt yazı stili */
+.caption {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+
+
+
+
+/* Responsive tasarım için menü düzeni */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar a {
+        padding: 10px;
+    }
+}
+
+/* Dropdown menüsü için stil */
+.dropdown {
+    position: relative;
+    display: inline-block; /* Yan yana durması için */
+}
+
+.dropdown-content {
+    display: none; /* Başlangıçta gizli */
+    position: absolute;
+    background-color: #ffffff; /* Arka plan rengi */
+    min-width: 160px; /* Açılır menü genişliği */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+    z-index: 1;
+    border-radius: 5px; /* Kenarları yuvarlat */
+    opacity: 0; /* Başlangıçta görünmez */
+    transition: opacity 0.3s ease; /* Geçiş efekti */
+}
+
+/* Dropdown menüsü için stil */
+.dropdown {
+    position: relative;
+    display: inline-block; /* Yan yana durması için */
+}
+
+.dropdown-content {
+    display: none; /* Başlangıçta gizli */
+    position: absolute;
+    background-color: #ffcc00; /* Lego sarısı rengi */
+    min-width: 160px; /* Açılır menü genişliği */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+    z-index: 1;
+    border: 2px solid #e6b800; /* Çerçeve rengi */
+    border-radius: 5px; /* Kenarları yuvarlat */
+    opacity: 0; /* Başlangıçta görünmez */
+    transition: opacity 0.3s ease; /* Geçiş efekti */
+}
+
+/* Açılır menü öğeleri */
+.dropdown-content a {
+    color: #333; /* Bağlantı rengi */
+    padding: 12px 16px; /* Bağlantı içi boşluk */
+    text-decoration: none; /* Alt çizgi yok */
+    display: block; /* Bağlantı blok öğesi */
+    transition: background-color 0.3s; /* Hover geçiş efekti */
+}
+
+/* Hover efektleri */
+.dropdown-content a:hover {
+    background-color: #e6b800; /* Hover rengini değiştirir */
+    color: #fff; /* Hoverda metin rengi beyaz */
+}
+
+/* Menü görünürlüğü ayarları */
+.dropdown:hover .dropdown-content {
+    display: block; /* Üzerine gelindiğinde görünür */
+    opacity: 1; /* Açıldığında görünür hale gelir */
+}
+
+/* Alt menü açıldığında animasyon */
+.dropdown:hover .dropdown-content {
+    animation: fadeIn 0.3s; /* Fade in animasyonu */
+}
+
+/* Fade in animasyonu tanımı */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Başlangıçta gizli */
+    }
+    to {
+        opacity: 1; /* Tam görünür hale gelir */
+    }
+}
+
+.button {
+    position: absolute;
+    top: 50%; /* Daha alta hizalamak için artırabilirsiniz */
+    left: 10%; /* Sola hizalamak için küçük bir yüzde değeri seçin */
+    transform: translate(-0%, -0%);
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #dddad9, #cfcfcf);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    font-size: 20px; /* Daha büyük yazı */
+    font-weight: 100; /* Kalın yazı */
+    font-family: 'Arial', sans-serif; /* Gösterişli yazı tipi */
+    letter-spacing: 1px; /* Harfler arası boşluk */
+    
+    text-shadow: 2px 2px 5px rgb(0, 0, 0); /* Yazı gölgesi */
+    border-radius: 10px;
+        /* box-shadow: 5px 5px 15px rgba(255, 251, 0, 0.2), 
+                -5px -5px 15px rgba(255, 251, 0, 0.1); /* 3D efekti için gölge */
+        /* transition: all 0.3s ease; */ 
+}
+
+.button:hover {
+    /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2), 
+                -2px -2px 10px rgba(255, 255, 255, 0.1); Hover'da hafif değişim */
+    transform: translate(-0%, -0%) scale(1.05); /* Hover'da biraz büyüme */
+    background: black;
+}
+
+.button:active {
+    box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.3), 
+                inset -3px -3px 8px rgba(255, 255, 255, 0.1); /* Tıklandığında içe gölge */
+    transform: translate(-0%, -0%) scale(0.98); /* Butona basılınca hafif küçülme */
+}
+
